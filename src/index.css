@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply theme colors to root element */
+:root {
+  color-scheme: light;
+  color: var(--light-text-primary);
+  background-color: var(--light-bg-primary);
+}
+
+:root.dark {
+  color-scheme: dark;
+  color: var(--dark-text-primary);
+  background-color: var(--dark-bg-primary);
+}
