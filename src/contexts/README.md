@@ -1,60 +1,128 @@
 # Contexts Directory
 
-The `contexts` directory, located within `src/contexts`, plays a crucial role in state management within the Checkpoint Navigator project. It houses React context providers, which are used to manage global state that needs to be accessible across multiple components in the application. Currently, it includes `ThemeContext.tsx`, which manages the application's theme (light and dark modes). This README provides an overview of the purpose and contents of the `contexts` directory.
+The `contexts` directory contains React Context providers that manage global state and shared functionality across the Jarvis Roadmap application. These contexts enable efficient state management and provide a way to share data between components without prop drilling.
 
-## Purpose
+## Directory Structure
 
-React Context provides a way to share values like state, functions, or even theme configurations between components without explicitly passing them down through each level of the component tree (prop drilling). The `contexts` directory is used to encapsulate these global state management solutions, making it easier to manage and access application-wide states.
+```
+contexts/
+├── ThemeContext.tsx
+└── README.md
+```
 
-## Contents
-
-Currently, the `contexts` directory contains one context provider:
+## Available Contexts
 
 ### `ThemeContext.tsx`
 
-- **Purpose:** The `ThemeContext.tsx` file defines and exports a React context named `ThemeContext` and a corresponding provider component, likely named `ThemeProvider`. This context is responsible for managing the current theme of the application, allowing components to switch between light and dark modes.
-- **Functionality:**
-    - **Theme State:** Manages the current theme state, typically stored as a string value (e.g., 'light' or 'dark').
-    - **Theme Toggle Function:** Provides a function to toggle between themes, updating the theme state and triggering UI updates in components that consume this context.
-    - **Provider Component (`ThemeProvider`):** Wraps a section of the application, making the theme context and its values available to all child components.
-- **Usage:**
-    1. **Import Context and Hook:** Import `ThemeContext` and potentially a custom hook (e.g., `useTheme`) from `src/contexts/ThemeContext.tsx` in components that need to access or modify the theme.
-    2. **Wrap with Provider:** In the application's entry point (`App.tsx` or `main.tsx`), wrap the root component or the relevant section of the component tree with `<ThemeProvider>` to make the theme context available to its descendants.
-    3. **Consume Context:** Use `React.useContext(ThemeContext)` or a custom hook like `useTheme` in functional components to access the current theme value and the theme toggle function.
+Manages the application's theme state, providing functionality to switch between light and dark modes.
 
-    **Example Usage:**
+#### Purpose
+- Maintains global theme state
+- Provides theme switching functionality
+- Ensures consistent theming across the application
+- Persists theme preference
 
-    ```typescript jsx
-    // Example of using ThemeContext in a component
-    import React, { useContext } from 'react';
-    import { ThemeContext } from '@/contexts/ThemeContext';
-    import { Button } from '@/components/ui/button';
+#### Implementation
 
-    function ThemeAwareComponent() {
-      const { theme, toggleTheme } = useContext(ThemeContext);
+```typescript
+// ThemeContext.tsx
+export const ThemeContext = createContext<ThemeContextType>({
+  theme: 'light',
+  setTheme: () => null,
+});
 
-      return (
-        <div>
-          <p>Current Theme: {theme}</p>
-          <Button onClick={toggleTheme}>Toggle Theme</Button>
-        </div>
-      );
-    }
-    ```
+export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
-## Benefits of Using Context
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+```
 
-- **Avoid Prop Drilling:** Simplifies passing state down deeply nested component trees. Instead of passing props through multiple layers, components can directly access the context value.
-- **Global State Management:** Provides a lightweight solution for managing global states like theme, user authentication status, or locale settings.
-- **Component Reusability:** Components become more reusable as they rely on context for certain states rather than expecting them as props.
-- **Maintainability:** Centralizes state logic in context providers, making it easier to manage and update global states.
+#### Usage
+
+```typescript
+import { useContext } from 'react';
+import { ThemeContext } from '@/contexts/ThemeContext';
+
+function ThemeSwitcher() {
+  const { theme, setTheme } = useContext(ThemeContext);
+
+  return (
+    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+      Toggle Theme
+    </button>
+  );
+}
+```
 
 ## Best Practices
 
-- **Context Scope:** Define context providers at the highest level necessary to make the state available where it's needed, but avoid making the scope too broad unnecessarily.
-- **Provider Location:** Typically, context providers are set up in the application's entry point or layout components to wrap the parts of the application that need access to the context.
-- **Consumer Components:** Only components that actually need to access the context should consume it to avoid unnecessary re-renders.
-- **Context Value Structure:** Keep the context value structure simple and focused on related state and functions. For more complex state management, consider using state management libraries like Zustand or Redux.
-- **Custom Hooks:** Create custom hooks (e.g., `useTheme`) to abstract the useContext hook and provide a cleaner API for consuming context values in components.
+### Creating New Contexts
 
-By effectively using the `contexts` directory and React Context, the Checkpoint Navigator project efficiently manages global states like theme, enhancing maintainability and component reusability.
+1. **State Management**
+   - Keep context state focused and minimal
+   - Consider performance implications
+   - Use appropriate TypeScript types
+
+2. **Provider Implementation**
+   - Implement proper error handling
+   - Add appropriate default values
+   - Consider memoization when needed
+
+3. **Documentation**
+   - Add comprehensive JSDoc comments
+   - Include usage examples
+   - Document provider props
+
+### Using Contexts
+
+1. **Component Integration**
+   - Use the useContext hook appropriately
+   - Handle potential undefined values
+   - Consider performance optimizations
+
+2. **Error Handling**
+   - Implement error boundaries
+   - Provide fallback values
+   - Handle edge cases
+
+3. **Testing**
+   - Write unit tests for context logic
+   - Test provider components
+   - Mock context values in component tests
+
+## Contributing
+
+When adding new contexts:
+
+1. Follow the established pattern
+2. Add comprehensive documentation
+3. Include usage examples
+4. Write unit tests
+5. Update this README
+
+### Guidelines
+
+1. **Naming Conventions**
+   - Use PascalCase for context names
+   - Add 'Context' suffix
+   - Use descriptive names
+
+2. **File Organization**
+   - One context per file
+   - Include types and interfaces
+   - Export all necessary components
+
+3. **Performance**
+   - Use context splitting when appropriate
+   - Implement memoization
+   - Avoid unnecessary re-renders
+
+## Related Documentation
+
+- [Components README](../components/README.md)
+- [Root README](../../README.md)

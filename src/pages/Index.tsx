@@ -35,6 +35,7 @@ const Index = () => {
     const checkMobile = () => {
       if (window.innerWidth < 768 && !localStorage.getItem('mobile-popup-shown')) {
         setShowMobileMessage(true);
+        document.body.style.overflow = 'hidden';
         localStorage.setItem('mobile-popup-shown', 'true');
       }
     };
@@ -155,6 +156,7 @@ const Index = () => {
   
   const dismissMobileMessage = () => {
     setShowMobileMessage(false);
+    document.body.style.overflow = 'auto';
   };
   
   const closeMobileDetail = () => {
@@ -219,7 +221,7 @@ const Index = () => {
               onClick={handleYoutubeClick}
               className="premium-button flex items-center justify-center gap-2 bg-gradient-to-br from-red-600 to-red-800 text-white transition-all duration-300 py-3 px-6 text-sm font-medium shadow-xl hover:shadow-2xl transform hover:-translate-y-1 rounded-xl border border-white/10"
             >
-              <span className="premium-btn-text">Subscribe to YouTube</span>
+              <span className="premium-btn-text">Subscribe to DevsDoCode YT</span>
               <ExternalLink size={14} className="ml-1" />
             </button>
           </div>
