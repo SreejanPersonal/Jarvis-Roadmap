@@ -98,7 +98,7 @@ const NavButtons: React.FC = () => {
     setIsGithubAnimating(true);
     setTimeout(() => setIsGithubAnimating(false), 800);
     
-    window.open('https://github.com/example/jarvis-series', '_blank');
+    window.open('https://github.com/SreejanPersonal/Jarvis-Roadmap', '_blank');
     toast({
       title: "GitHub Repository",
       description: "Don't forget to star the repository!",
