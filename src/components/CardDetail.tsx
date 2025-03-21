@@ -103,7 +103,7 @@ const CardDetail: React.FC<CardDetailProps> = ({
     </button>;
 
   return <div ref={detailRef} className={cn("w-full max-w-lg transition-all duration-500 ease-in-out transform", isVisible ? "opacity-100" : "opacity-0", animateIn ? "translate-x-0" : "translate-x-20")}>
-      <div className="neomorphic p-6 rounded-2xl hover:shadow-glow-soft transition-all duration-500 my-[-40px] animate-float-slow transform-gpu">
+      <div className="neomorphic p-6 rounded-2xl hover:shadow-glow-soft transition-all duration-500 my-[-40px] animate-float-slow transform-gpu" style={{ animationDuration: '1s' }}>
         <div className="flex flex-col">
           <div>
             <h2 className="text-2xl font-bold mb-3 bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">{item.title}</h2>

@@ -87,7 +87,7 @@ const NavButtons: React.FC = () => {
     setIsCoffeeAnimating(true);
     setTimeout(() => setIsCoffeeAnimating(false), 1500);
     
-    window.open('https://buymeacoffee.com/example', '_blank');
+    window.open('https://buymeacoffee.com/devsdocode', '_blank');
     toast({
       title: "Buy Me A Coffee",
       description: "Thanks for considering supporting this project!",

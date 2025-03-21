@@ -22,26 +22,29 @@ export interface RoadmapItem {
 export const roadmapData: RoadmapItem[] = [
   {
     id: 1,
-    title: "Custom Voice Engine",
-    description: "Personalized voice synthesis with customizable accents and styles",
-    datePublished: "21st May 2025",
-    content: "In this inaugural video of our JARVIS series, we'll build a custom voice engine that goes beyond basic text-to-speech. You'll learn how to create a personalized voice synthesis system with adjustable accents, emotional tones, and speech styles. This foundational component will give your AI assistant a unique personality and make interactions feel more natural and engaging.",
-    duration: "45 minutes",
-    tags: ["Voice Synthesis", "Neural TTS", "Audio Processing", "Personalization"],
-    thumbnailUrl: "https://source.unsplash.com/random/800x600/?ai,voice",
-    completed: false,
+    title: "TTS Engine",
+    description: "Introduction to 5 different TTS providers for building a custom voice engine",
+    datePublished: "21st March 2025",
+    content: "Welcome to the first video in the J.A.R.V.I.S. 4.0 series! In this video, we dive into the world of Text-to-Speech (TTS) and explore five different providers that we can integrate into our AI assistant. Understanding these options is crucial for building a custom voice engine. We'll be discussing TikTok TTS, Deepgram, Edge TTS, Hearling, and Speechify, giving you a solid introduction to these technologies.",
+    duration: "19 minutes",
+    tags: ["Text-to-Speech", "TTS", "Voice Synthesis", "AI Assistant", "J.A.R.V.I.S."],
+    thumbnailUrl: "https://youtu.be/6-zxXJoxkxU",
+    videoUrl: "https://youtu.be/6-zxXJoxkxU",
+    sourceCodeUrl: "https://drive.google.com/drive/folders/1ZLOsjkk42VTadsLXiI7CRCSJ25YM8xWV?usp=sharing",
+    completed: true,
     isLatest: true,
-    technicalDetails: "We'll utilize modern neural TTS libraries to generate high-quality voice output, with a focus on customizable parameters for accent, speed, tone, and emotion. The implementation will include voice profile management to store and switch between different voice settings.",
+    technicalDetails: "This video provides an overview of various TTS technologies and their integration possibilities. We compare the features, quality, and implementation requirements of TikTok TTS, Deepgram, Edge TTS, Hearling, and Speechify to help you choose the right voice solution for your AI assistant.",
     requirements: [
-      "Python 3.9+",
-      "Basic understanding of audio processing",
-      "PyTorch or TensorFlow experience helpful but not required"
+      "Basic understanding of AI assistants",
+      "Interest in voice technology",
+      "No specific programming knowledge required for this overview"
     ],
     keyConcepts: [
-      "Neural text-to-speech",
-      "Voice profiling",
-      "Accent modification",
-      "Emotional speech synthesis"
+      "TTS provider comparison",
+      "Voice quality assessment",
+      "Integration options",
+      "AI voice customization",
+      "Voice technology selection"
     ]
   },
   {

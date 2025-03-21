@@ -114,8 +114,10 @@ const RoadmapCard = forwardRef<HTMLDivElement, RoadmapCardProps>(({ item, isSele
         isPressed ? "scale-98" : "hover:scale-[1.02] transition-transform duration-300",
         isSelected ? "z-10" : "z-0",
         "transition-all duration-500 ease-out",
-        animateCardChange ? "animate-card-select" : ""
+        animateCardChange ? "animate-card-select" : "",
+        isSelected ? "animate-float-slow" : ""
       )}
+      style={isSelected ? { animationDuration: '2s' } : {}}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}

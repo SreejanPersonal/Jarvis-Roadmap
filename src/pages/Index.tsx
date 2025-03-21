@@ -151,7 +151,7 @@ const Index = () => {
   };
   
   const handleYoutubeClick = () => {
-    window.open('https://youtube.com/example', '_blank');
+    window.open('https://www.youtube.com/playlist?list=PLcb7hDy97wSJOc_VeEhrPM9o9CzAxSz7l', '_blank');
   };
   
   const dismissMobileMessage = () => {
