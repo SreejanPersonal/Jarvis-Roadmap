@@ -32,7 +32,7 @@ export const roadmapData: RoadmapItem[] = [
     videoUrl: "https://youtu.be/6-zxXJoxkxU",
     sourceCodeUrl: "https://drive.google.com/drive/folders/1ZLOsjkk42VTadsLXiI7CRCSJ25YM8xWV?usp=sharing",
     completed: true,
-    isLatest: true,
+    isLatest: false,
     technicalDetails: "This video provides an overview of various TTS technologies and their integration possibilities. We compare the features, quality, and implementation requirements of TikTok TTS, Deepgram, Edge TTS, Hearling, and Speechify to help you choose the right voice solution for your AI assistant.",
     requirements: [
       "Basic understanding of AI assistants",
@@ -49,26 +49,29 @@ export const roadmapData: RoadmapItem[] = [
   },
   {
     id: 2,
-    title: "Real-time Chat Interface",
-    description: "Instant messaging with AI that responds with minimal latency",
-    datePublished: "June 2025",
-    content: "Building on our voice engine, this video focuses on creating a responsive chat interface that minimizes the perceived latency between user input and AI response. You'll learn techniques for streaming responses, implementing typing indicators, and optimizing the communication pipeline to create a fluid, real-time conversation experience that feels as natural as chatting with a human assistant.",
-    duration: "50 minutes",
-    tags: ["UI/UX", "Real-time Systems", "Streaming", "Latency Optimization"],
-    thumbnailUrl: "https://source.unsplash.com/random/800x600/?chat,interface",
-    completed: false,
-    isLatest: false,
-    technicalDetails: "We'll implement a WebSocket-based communication system for real-time message delivery, with optimized response streaming and progressive rendering. The interface will include typing indicators and read receipts to enhance the conversational feeling.",
+    title: "Speech-to-Text Integration",
+    description: "Free Real-time Voice Recognition Solutions",
+    datePublished: "24th March 2025",
+    content: "Discover two powerful and cost-effective speech-to-text solutions for your AI assistant. In this video, we explore DevsDoCode x Javascript Speech API for fast, API-based voice recognition, and Vosk for privacy-focused local processing. You'll learn how to integrate both solutions, compare their strengths, and choose the best option for your specific needs. These implementations offer real-time transcription capabilities without any subscription costs.",
+    duration: "24 minutes",
+    tags: ["Speech Recognition", "Voice-to-Text", "Real-time Processing", "Privacy", "API Integration"],
+    thumbnailUrl: "https://youtu.be/qrr_5zfGEis",
+    videoUrl: "https://youtu.be/qrr_5zfGEis",
+    // sourceCodeUrl: "https://drive.google.com/drive/folders/1ZLOsjkk42VTadsLXiI7CRCSJ25YM8xWV?usp=sharing",
+    completed: true,
+    isLatest: true,
+    technicalDetails: "Implementation covers two distinct speech-to-text solutions: DevsDoCode's JavaScript Speech API integration for cloud-based processing and Vosk's offline engine for local processing. Both systems provide real-time transcription capabilities with high accuracy rates and support for continuous speech recognition.",
     requirements: [
-      "JavaScript/TypeScript knowledge",
-      "Familiarity with WebSockets",
-      "Basic understanding of frontend frameworks"
+      "Basic JavaScript knowledge",
+      "Understanding of API integration",
+      "Familiarity with audio processing concepts"
     ],
     keyConcepts: [
-      "Real-time data streaming",
-      "Progressive response rendering",
-      "UX psychology for chat interfaces",
-      "Latency perception management"
+      "Real-time voice recognition",
+      "Cloud vs. Local processing",
+      "Privacy-focused implementation",
+      "Speech API integration",
+      "Continuous speech handling"
     ]
   },
   {
