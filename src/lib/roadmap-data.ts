@@ -57,7 +57,7 @@ export const roadmapData: RoadmapItem[] = [
     tags: ["Speech Recognition", "Voice-to-Text", "Real-time Processing", "Privacy", "API Integration"],
     thumbnailUrl: "https://youtu.be/qrr_5zfGEis",
     videoUrl: "https://youtu.be/qrr_5zfGEis",
-    sourceCodeUrl: "https://drive.google.com/drive/folders/1ZLOsjkk42VTadsLXiI7CRCSJ25YM8xWV?usp=sharing",
+    sourceCodeUrl: "https://drive.google.com/drive/folders/1NHerb5tHJ7qj3z7__RwSUAQZ2fCmjLDN?usp=sharing",
     completed: true,
     isLatest: true,
     technicalDetails: "Implementation covers two distinct speech-to-text solutions: DevsDoCode's JavaScript Speech API integration for cloud-based processing and Vosk's offline engine for local processing. Both systems provide real-time transcription capabilities with high accuracy rates and support for continuous speech recognition.",
